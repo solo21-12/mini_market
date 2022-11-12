@@ -4,8 +4,12 @@ export default function Home({ }) {
   let [category, setCategory] = useState([])
   let [banner, setBanner] = useState([])
   let [headline, setHeadline] = useState([])
+  let [loading, setLoading] = useState(false)
+
   const getCategory = async () => {
-    setCategory(await (await fetch("/api/products/categore")).json())
+    
+    setCategory(
+      await (await fetch("/api/products/categore")).json())
   }
   const getBanner = async () => {
     const data1 = await (await fetch("/api/banner")).json()
@@ -23,7 +27,7 @@ export default function Home({ }) {
   return (
     <div >
       {
-        category && category.length >=1 ? <main>
+         category.length >=1 ? <main>
         <Main banner={banner} />
         <Headline headline={headline} />
         <TopBanner category={category} />
