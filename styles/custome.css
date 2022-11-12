@@ -393,3 +393,14 @@
 .row-poster1::-webkit-scrollbar {
   display: none;
 }
+
+.loading{
+  background-image: url("../public/logo10.gif");
+  background-size:80vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  min-height: 75vh;
+  object-fit: contain;
+  
+}

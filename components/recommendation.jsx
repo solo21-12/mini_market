@@ -1,9 +1,8 @@
 import React from 'react'
 import Image from 'next/image';
-import { motion } from "framer-motion"
 import Headline from './headline';
-
-const Recommend = ({ data }) => {
+import Link from "next/link"
+const Recommend = ({ data,link }) => {
   const headline = {
     "bigText": "You may also like",
     "smallText": ""
@@ -13,7 +12,9 @@ const Recommend = ({ data }) => {
     <div className='row-poster track'>
       {data.map(rec => {
         return (
-          <Image src={rec.Background} key={rec.id} alt="logo" className='row-poster-img' width={500} height={400} />
+          <Link key={rec.id}  href={`${link}`}>
+          <Image src={rec.Background}  alt="logo" className='row-poster-img' width={500} height={400} />
+          </Link>
         )
       })}
     </div>

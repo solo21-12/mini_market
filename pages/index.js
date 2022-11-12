@@ -21,18 +21,16 @@ export default function Home({ }) {
     getHeadline()
   }, [])
   return (
-
     <div >
-
-      <main>
+      {
+        category && category.length >=1 ? <main>
         <Main banner={banner} />
         <Headline headline={headline} />
         <TopBanner category={category} />
-        <BootomBanner />
-      </main>
-
+        <BootomBanner banner={banner}/>
+      </main> : <div className='   bg-black loading'></div>
+      }
       <footer >
-
       </footer>
     </div>
   )

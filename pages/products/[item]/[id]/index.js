@@ -8,7 +8,7 @@ const Detail = () => {
   const router = useRouter()
   const id = router.query.id
   const item = router.query.item
-  const { qty, setcartItem ,onAdd,showCart} = useStateContext()
+  const { showCart} = useStateContext()
   const [data, setData] = useState([])
   const [logo, setlogo] = useState(data.Background)
   const [recommend,setRecommend] = useState([])
@@ -68,7 +68,7 @@ const Detail = () => {
       </div>
       
       {showCart ?<div></div>: 
-      <Recommend data={recommend} />
+      <Recommend data={recommend} link={`/products/${item}`} />
       }
     </div>);
 }
